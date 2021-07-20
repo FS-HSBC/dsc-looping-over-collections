@@ -25,11 +25,12 @@ print(zero_to_three[2])
 print(zero_to_three[3])
 ```
 
+```
     0
     1
     2
     3
-
+```
 
 > Press shift + enter
 
@@ -45,11 +46,12 @@ for number in zero_to_three:
     print(number)
 ```
 
+```
     0
     1
     2
     3
-
+```
 
 Great! We were able to reproduce the exact same functionality as we had previously. However, in this example, we used only **2** lines of code. 
 
@@ -73,6 +75,7 @@ for whatever_we_want in zero_to_three:
 print("The for loop is finished now! I am not in the for loop block, which is why I only printed once!")
 ```
 
+```
     This is iteration: 1
     0
     This is iteration: 2
@@ -82,7 +85,7 @@ print("The for loop is finished now! I am not in the for loop block, which is wh
     This is iteration: 4
     3
     The for loop is finished now! I am not in the for loop block, which is why I only printed once!
-
+```
 
 ## Using list elements as indices
 
@@ -100,6 +103,7 @@ for index in [0,1,2,3,4,5,6,7]:
     print(countries[index])
 ```
 
+```
     0
     Croatia
     1
@@ -116,7 +120,7 @@ for index in [0,1,2,3,4,5,6,7]:
     Vietnam
     7
     Israel
-
+```
 
 So, in the example above, we are still using the elements in the list of numbers from 0 to 7 in our `for` loop, but we are instead using them to access each element of another list. This example is a bit contrived, but perhaps you have two lists that are ordered correctly and have information like the capital cities in one list and the corresponding countries in another. How would we print both of those out in the same line?
 
@@ -132,6 +136,7 @@ for index in [0,1,2,3,4,5,6,7]:
     print(cities[index]+",", countries[index])
 ```
 
+```
     Zagreb, Croatia
     District of Columbia, USA
     Buenos Aires, Argentina
@@ -140,7 +145,7 @@ for index in [0,1,2,3,4,5,6,7]:
     Tokyo, Japan
     Hanoi, Vietnam
     Tel Aviv, Israel
-
+```
 
 Of course, this does not work if our indices do not match up with the size of our list.
 
@@ -181,11 +186,9 @@ So, the preferred way of figuring out the number of iterations on a list when yo
 len(countries)
 ```
 
-
-
-
+```
     8
-
+```
 
 
 Then we can turn this length into a successive list of elements in the following way:   
@@ -197,11 +200,9 @@ First, create a range object:
 range(0, len(countries))
 ```
 
-
-
-
+```
     range(0, 8)
-
+```
 
 
 And then convert this into a list:
@@ -211,11 +212,9 @@ And then convert this into a list:
 list(range(0, len(countries)))
 ```
 
-
-
-
+```
     [0, 1, 2, 3, 4, 5, 6, 7]
-
+```
 
 
 Note that the range object is marking the starting and ending point, and excluding the end.  So this works perfectly:
@@ -226,6 +225,7 @@ for index in list(range(0, len(countries))):
     print(cities[index]+",", countries[index])
 ```
 
+```
     Zagreb, Croatia
     District of Columbia, USA
     Buenos Aires, Argentina
@@ -234,7 +234,7 @@ for index in list(range(0, len(countries))):
     Tokyo, Japan
     Hanoi, Vietnam
     Tel Aviv, Israel
-
+```
 
 And as we add or subtract countries, we will still be iterating through our list elements.
 
@@ -246,6 +246,7 @@ for index in list(range(0, len(countries))):
     print(cities[index]+",", countries[index])
 ```
 
+```
     Zagreb, Croatia
     District of Columbia, USA
     Buenos Aires, Argentina
@@ -255,7 +256,7 @@ for index in list(range(0, len(countries))):
     Hanoi, Vietnam
     Tel Aviv, Israel
     Mexico City, Mexico
-
+```
 
 > Note: More conventionally, these contrived examples would employ the `enumerate()` method, but that is beyond the scope of the current lesson. At some point in the future, examine how this code snippet works:
 
@@ -275,10 +276,11 @@ for element in different_elements:
     print(element)
 ```
 
+```
     A String
     ['a', 'list', 'of', 5, ['elements']]
     {'this': 'is a dictionary'}
-
+```
 
 Now that we know we can iterate through a list that contains multiple data types, let's explore iterating through a data type that's **not a list**. 
 
@@ -291,14 +293,12 @@ print(example_dictionary.items())
 type(example_dictionary.items())
 ```
 
+```
     dict_items([('first_name', 'Terrance'), ('last_name', 'KOAR'), ('favorite_language', 'Python')])
 
 
-
-
-
     dict_items
-
+```
 
 
 Here we can see this **dict_items** object looks almost like a list, but each item has **two** parts, the **key** and **value**. So, in our first iteration, the first **key** will be **first_name**, and the first **value** will be **Terrance**.
@@ -310,6 +310,7 @@ for key, value in example_dictionary.items():
     print("this is the value:", value, "\n")
 ```
 
+```
     this is the key: first_name
     this is the value: Terrance 
     
@@ -318,7 +319,7 @@ for key, value in example_dictionary.items():
     
     this is the key: favorite_language
     this is the value: Python 
-    
+``` 
 
 
 So, we can see that the **dict_items** object groups the key values together in a way that we can iterate over them and access them. We can even use them to inform our program to operate on keys and values in a certain way. Such as, the last name is inexplicably in all caps. Let's look at how we can rectify that and title case the last name when we print out the full name of the `example_dictionary` object.
@@ -335,8 +336,9 @@ for key, value in example_dictionary.items():
 print(first_name, last_name)
 ```
 
+```
     Terrance Koar
-
+```
 
 ## Conventional Naming Patterns
 
@@ -348,6 +350,7 @@ for country in countries:
     print(country)
 ```
 
+```
     Croatia
     USA
     Argentina
@@ -357,7 +360,7 @@ for country in countries:
     Vietnam
     Israel
     Mexico
-
+```
 
 
 ```python
@@ -366,12 +369,13 @@ for ice_cream_flavor in ice_cream_flavors:
     print('I love ' + ice_cream_flavor + ' ice cream!!')
 ```
 
+```
     I love Mint Chocolate Chip ice cream!!
     I love Coffee ice cream!!
     I love Cookie Dough ice cream!!
     I love Fudge Mint Brownie ice cream!!
     I love Vanilla Bean ice cream!!
-
+```
 
 ## Summary
 
