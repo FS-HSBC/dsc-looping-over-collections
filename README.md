@@ -150,6 +150,7 @@ for index in [0,1,2,3,4,5,6,7,8,9,10]:
     print(cities[index]+",", countries[index])
 ```
 
+```
     Zagreb, Croatia
     District of Columbia, USA
     Buenos Aires, Argentina
@@ -171,7 +172,7 @@ for index in [0,1,2,3,4,5,6,7,8,9,10]:
     
 
     IndexError: list index out of range
-
+```
 
 So, the preferred way of figuring out the number of iterations on a list when you are unsure of its length would be to use the `len` function to calculate the size of the list.
 
@@ -257,6 +258,7 @@ for index in list(range(0, len(countries))):
 
 
 > Note: More conventionally, these contrived examples would employ the `enumerate()` method, but that is beyond the scope of the current lesson. At some point in the future, examine how this code snippet works:
+
 ```
 for idx, item in enumerate(['A', 'B', 'C']):
     print(idx, item)
